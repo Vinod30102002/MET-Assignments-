@@ -1,0 +1,19 @@
+user = float(input("Enter your bill: "))
+is_member = input("Enter your member or not? (yes/no): ")
+coupon = input("Enter your code: ")
+if is_member=="yes":
+    if user>100:
+        discount=20
+    if coupon == "special":
+        discount=5
+    else:
+        discount=10
+if is_member=="no":
+    if user>200:
+        discount=10
+    elif coupon=="special":
+        discount=5
+    else:
+        discount=5
+final_price=user-user*discount/100
+print(f"you final price is :",final_price)

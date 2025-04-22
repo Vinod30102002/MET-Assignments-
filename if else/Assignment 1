@@ -1,0 +1,5 @@
+
+user_bill = int(input("Enter th Bill amount: "))
+tip_percentage = user_bill*0.15
+total_bill = tip_percentage+user_bill
+print(total_bill)

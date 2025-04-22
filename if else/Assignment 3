@@ -1,0 +1,8 @@
+user_1 = int(input("Enter a Number: "))
+user_2 = int(input("Enter a Number: "))
+if user_1>user_2:
+    print(" user_1 is a larger number")
+elif user_1<user_2:
+    print(" user_1 is a smaller number")
+else:
+    print("both are equal numbers")

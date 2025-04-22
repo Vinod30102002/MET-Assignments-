@@ -1,0 +1,23 @@
+user = int(input("Enter the temperature in celsius: "))
+raining = input("If it is raining?(yes/no): ")
+if user>=30:
+    if raining=="yes":
+        print("Stay indoors and watch a movie.")
+    else:
+        print("Go swimming")
+elif 20<=user<=30:
+        if raining=="yes":
+            print("Visit a museum.")
+        else:
+            print("Perfect for a picnic!.")
+elif 10<=user<=20:
+        if raining=="yes":
+            print("indoor sports recommended.")
+        else:
+            print("Go for a walk.")
+elif user<=10:
+            if raining=="yes":
+                print("Stay home with hot chocolate.")
+            else:
+                print("Ice skating would be fun")
+    
