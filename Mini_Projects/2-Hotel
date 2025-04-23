@@ -1,0 +1,21 @@
+cost_per_litre = 100
+mileage_per_litre = 35
+total_distance = int(input("Total Distance: "))
+
+hotel_cost_per_day = 1000
+hotel_stay_days =int( input("Total Stay days: "))
+
+food_budget_per_day = int(input("Food budget per day : "))
+total_eating_days = int(input("Number of eating days: "))
+
+total_activity_budget =int( input("Activities budget: "))
+
+total_trip_liters=total_distance // mileage_per_litre
+total_cost_fuel=total_trip_liters * cost_per_litre
+
+total_accomodation =hotel_cost_per_day * hotel_stay_days
+
+total_food_bill =food_budget_per_day * total_eating_days
+
+total_trip_cost=total_cost_fuel+total_accomodation+total_food_bill+total_activity_budget
+print(f"total budget of trip: Rs.{total_trip_cost}/-")

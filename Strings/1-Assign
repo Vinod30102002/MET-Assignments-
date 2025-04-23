@@ -1,0 +1,5 @@
+sentence = input("give a sentence: ")
+a = sentence.count("p")
+print(a)
+b = sentence.isalnum()
+print(b)

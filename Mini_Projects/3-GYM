@@ -1,0 +1,75 @@
+basic_plan_name = "Basic"
+basic_plan_cost = 20.10
+basic_plan_includes_pool = False
+basic_plan_includes_classes = False
+basic_plan_guest_passes = 0
+
+standard_plan_name = "Standard" 
+standard_plan_cost = 40.10
+standard_plan_includes_pool = True
+standard_plan_includes_classes = False
+standard_plan_guest_passes = 1
+
+premium_plan_name = "Premium"
+premium_plan_cost = 70.10
+premium_plan_includes_pool = True
+premium_plan_includes_classes = True
+premium_plan_guest_passes = 3
+ 
+# User information
+
+customer_name = input("Enter your name: ")
+
+customer_age = int(input("Enter your age: "))
+
+customer_weight_kg = float(input("Enter your weight in kg: "))
+
+customer_height_cm = float(input("Enter your height in cm: "))
+ 
+# Expected usage
+
+expected_visits = int(input("How many times do you plan to visit the gym per month? "))
+wants_pool = input("Do you want to use the pool? (yes/no): ").lower() == "yes"
+wants_classes = input("Do you want to attend fitness classes? (yes/no): ").lower() == "yes"
+needs_guest_passes = int(input("How many guest passes will you need per month? "))
+
+cost_per_visit_basic = basic_plan_cost / expected_visits
+cost_per_visit_standard = standard_plan_cost / expected_visits
+cost_per_visit_premium = premium_plan_cost / expected_visits
+height_m = customer_height_cm / 100
+bmi = customer_weight_kg / (height_m ** 2)
+bmr = 10 * customer_weight_kg + 6.25 * customer_height_cm - 5 * customer_age + 5
+basic_score = (
+    expected_visits +
+    int(wants_pool and basic_plan_includes_pool) +
+    int(wants_classes and basic_plan_includes_classes) +
+    int(needs_guest_passes <= basic_plan_guest_passes)
+)
+
+standard_score = (
+    expected_visits +
+    int(wants_pool and standard_plan_includes_pool) +
+    int(wants_classes and standard_plan_includes_classes) +
+    int(needs_guest_passes <= standard_plan_guest_passes)
+)
+
+premium_score = (
+    expected_visits +
+    int(wants_pool and premium_plan_includes_pool) +
+    int(wants_classes and premium_plan_includes_classes) +
+    int(needs_guest_passes <= premium_plan_guest_passes)
+)
+print(f"\n--- Gym Membership Analysis for {customer_name} ---\n")
+
+print(f"Body Mass Index (BMI): {bmi:.2f}")
+print(f"Basal Metabolic Rate (BMR): {bmr:.2f} calories/day\n")
+
+print("Cost per Visit:")
+print(f"  Basic Plan   : ${cost_per_visit_basic:.2f}")
+print(f"  Standard Plan: ${cost_per_visit_standard:.2f}")
+print(f"  Premium Plan : ${cost_per_visit_premium:.2f}\n")
+
+print("Plan Match Score (higher is better):")
+print(f"  Basic Plan   : {basic_score}")
+print(f"  Standard Plan: {standard_score}")
+print(f"  Premium Plan : {premium_score}")

@@ -1,0 +1,4 @@
+a = ["alice","bob","charlie"]
+b = input("Enter a new username: ")
+is_taken = b in a
+ print(is_taken)

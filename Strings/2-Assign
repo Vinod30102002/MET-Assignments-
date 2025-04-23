@@ -1,0 +1,5 @@
+name = input("Enter any string: ")
+print(name.isupper())
+print(name.islower())
+print(name.isdigit())
+print(name.isalnum())

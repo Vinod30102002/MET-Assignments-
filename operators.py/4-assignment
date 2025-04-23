@@ -1,0 +1,5 @@
+password = input("Enter a password: ")
+has_special_char = ('@' in password or '#' in password or '$'in password or '%' in password or '&' in password)
+no_spaces = not any(char.isspace() for char in password)
+is_valid = has_special_char and no_spaces
+print("Valid password: ",is_valid)

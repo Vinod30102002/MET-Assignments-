@@ -1,0 +1,4 @@
+a = input("Enter your first name: ")
+b = input("Enter your last name: ")
+c = input("Enter your middle name: ")
+print(f"Mr. {a} {c} {b}"

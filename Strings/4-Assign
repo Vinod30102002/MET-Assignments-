@@ -1,0 +1,5 @@
+sentence = input("Enter a Sentence: ")
+a = sentence.strip()
+print(a)
+b = sentence.count("the")
+print(b)

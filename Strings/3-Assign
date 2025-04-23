@@ -1,0 +1,3 @@
+name = "Python is easy Python is powerfull"
+a = name.replace("Python", "Coding")
+print(a)

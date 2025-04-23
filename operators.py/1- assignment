@@ -1,0 +1,5 @@
+ a = input("did you scored 90+ in science: ")
+ b = input("did you scored 90+ in social: ")
+ c = input("did you scored 90+ in maths: ")
+ d = input("did you got A grade in all subjects: ")
+ print(a ,b , c ,d )
